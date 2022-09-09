@@ -22,7 +22,7 @@ last_position = None
 
 ######################### HELPERS ##############################
 
-# Helper to give us a nice color swirl
+# Helper to give us a nice color swirl (from Adafruit Trinket m0 demo)
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
