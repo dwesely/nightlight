@@ -1,5 +1,4 @@
 # Trinket IO demo
-# Welcome to CircuitPython 3.1.1 :)
 
 # import alarm
 import board
