@@ -1,4 +1,5 @@
-# Trinket nightlight
+# Trinket IO demo
+# Welcome to CircuitPython 3.1.1 :)
 
 # import alarm
 import board
@@ -8,7 +9,7 @@ from digitalio import DigitalInOut, Direction, Pull
 import rotaryio
 
 
-# dotstar pixel
+# One pixel connected internally!
 nightlight_brightness = 0.5
 dot = dotstar.DotStar(board.APA102_SCK, board.APA102_MOSI, 1, brightness=nightlight_brightness)
 
@@ -22,7 +23,7 @@ last_position = None
 
 ######################### HELPERS ##############################
 
-# Helper to give us a nice color swirl (from the Adafruit trinket demo)
+# Helper to give us a nice color swirl
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
@@ -48,7 +49,7 @@ def wheel(pos):
 i = 0
 t = 0
 starting_color_position = 65
-timeout = 5000 * 60 * 10 # 10 minutes
+timeout = 5000 * 60 * 10  # 10 minutes
 
 while True:
     # Increment the timer
@@ -67,6 +68,9 @@ while True:
         # L = max(0, L - 0.001)
         dot[0] = [R, G, B, L]
         # print(dot.brightness)
+        if max(dot[0]) <= 1.0:
+            # TODO: deep sleep, wake up on interrupt
+            pass
     # print(t)
     
     # Check for rotary encoder movement
