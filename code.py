@@ -1,4 +1,4 @@
-# Trinket IO demo
+# Trinket Nightlight
 
 # import alarm
 import board
